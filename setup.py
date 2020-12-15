@@ -1,15 +1,15 @@
-from setuptools import setup
+from setuptools import setup, find_packages
 
 setup(
-    name='helm-doc',
-    version='0.1',
-    py_modules=['helmdoc',],
-    install_requires=[
-        'Click',
-        'pyyaml'
+    name="helm-doc",
+    version="0.1.0",
+    py_modules=[
+        "helmdoc",
     ],
-    entry_points='''
+    package=find_packages(),
+    install_requires=["wheel", "Click", "pyyaml"],
+    entry_points="""
         [console_scripts]
         helm-doc=helmdoc:cli
-    ''',
+    """,
 )
